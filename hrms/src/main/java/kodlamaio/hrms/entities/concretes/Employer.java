@@ -41,7 +41,7 @@ public class Employer extends User{
 	@Size(max=15)
 	@Column(name="phone")
 	private String phone;
-
+	
 	@Builder(builderMethodName = "childBuilder")
 	public Employer(final int id,@NotBlank @Email @Size(max = 100) final String email, 
 			@NotBlank @Size(max = 100) final String password, @NotBlank @Size(max = 100) final String companyName, 
