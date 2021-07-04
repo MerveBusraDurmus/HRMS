@@ -1,5 +1,9 @@
 package kodlamaio.hrms.business.abstracts;
 
-public interface EmployerService {
 
+import kodlamaio.hrms.core.abstracts.BaseService;
+import kodlamaio.hrms.entities.concretes.Employer;
+
+public interface EmployerService extends BaseService<Employer,Integer>{
+	 
 }

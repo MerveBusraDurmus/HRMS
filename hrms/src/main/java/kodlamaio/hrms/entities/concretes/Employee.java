@@ -3,6 +3,8 @@ package kodlamaio.hrms.entities.concretes;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import kodlamaio.hrms.core.entities.User;
 import lombok.Data;
@@ -24,13 +26,18 @@ public class Employee extends User{
 //	@Column(name="user_id")
 //	private int userId;
 	
+	@NotBlank 
+	@Size(max = 50) 
 	@Column(name="first_name")
 	private String firstName;
 	
+	@NotBlank 
+	@Size(max = 50)
 	@Column(name="last_name")
 	private String lastName;
 
-	public Employee(int id, String email, String password, String firstName, String lastName) {
+	public Employee(final int id, String email,@NotBlank @Size(max = 100) final String password,
+			@NotBlank @Size(max = 50) final String firstName,@NotBlank @Size(max = 50) final String lastName) {
 		super(id, email, password);
 		this.firstName = firstName;
 		this.lastName = lastName;
